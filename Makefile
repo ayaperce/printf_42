@@ -3,7 +3,7 @@ CC=clang
 CFLAGS=-Wall -Wextra -Werror
 RM=rm -f
 LIBFT = ./include/*.c
-SRC = ./src/*.c
+SRC = ./source/*.c
 OBJ = $(SRC:.c=.o)
 OBJLibft = $(LIBFT:.c=.o)
 
