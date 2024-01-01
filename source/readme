@@ -1,0 +1,4 @@
+ecriture en base, faire les cas particulier celon les fonctions variadique.
+fonctions variadique --> creer la liste en debut 
+gerer les arg et les malloc avec un len
+len with argv argc

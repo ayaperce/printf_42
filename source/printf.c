@@ -1,9 +1,50 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   printf.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ayaperce <ayaperce@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/31 21:10:45 by ayaperce          #+#    #+#             */
+/*   Updated: 2023/12/31 21:11:45 by ayaperce         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../include/libft.h"
 #include "printf.h"
 
-int ft_printf(const char *s, ...)
+int	check_flag(char c, va_list args)
 {
-    va_list args;
-    va_start(args, nbargs);
+	if (c == 'c')
+		ft_putchar((char)va_arg(args, int));
+	else if (c == 's')
+		ft_putstr((char *)va_arg(args, char *));
+	return (0);
+}
 
-    
+int	ft_printf(const char *s, ...)
+{
+	va_list	args;
+	size_t	i;
+	char	*str;
+
+	str = ft_strdup(s);
+	va_start(args, s);
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] != '%')
+		{
+			ft_putchar(str[i]);
+			i++;
+		}
+		else
+		{
+			check_flag(str[i + 1], args);
+			i++;
+		}
+	}
+	free(str);
+	va_end(args);
+	return (i);
 }
