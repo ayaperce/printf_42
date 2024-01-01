@@ -6,7 +6,7 @@
 /*   By: ayaperce <ayaperce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 21:10:45 by ayaperce          #+#    #+#             */
-/*   Updated: 2023/12/31 21:11:45 by ayaperce         ###   ########.fr       */
+/*   Updated: 2024/01/01 18:43:38 by ayaperce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,13 @@ int	ft_printf(const char *s, ...)
 	while (str[i])
 	{
 		if (str[i] != '%')
-		{
 			ft_putchar(str[i]);
-			i++;
-		}
 		else
 		{
 			check_flag(str[i + 1], args);
 			i++;
 		}
+        i++;
 	}
 	free(str);
 	va_end(args);
