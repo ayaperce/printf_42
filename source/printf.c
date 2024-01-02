@@ -6,7 +6,7 @@
 /*   By: ayaperce <ayaperce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 21:10:45 by ayaperce          #+#    #+#             */
-/*   Updated: 2024/01/01 18:43:38 by ayaperce         ###   ########.fr       */
+/*   Updated: 2024/01/02 02:53:09 by ayaperce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,22 @@ int	check_flag(char c, va_list args)
 		ft_putchar((char)va_arg(args, int));
 	else if (c == 's')
 		ft_putstr((char *)va_arg(args, char *));
-	return (0);
+	else if (c == 'i' || c == 'd')
+		ft_putnbr((int)va_arg(args, int));
+	else if (c == '%')
+		ft_putchar('%');
+	else if (c == 'u')
+		ft_putnbr_unsigned((unsigned int)va_arg(args, unsigned int));
+	else if (c == 'x')
+		ft_putnbr_base((unsigned int)va_arg(args, unsigned int),
+			"0123456789abcdef", c);
+	else if (c == 'X')
+		ft_putnbr_base((unsigned int)va_arg(args, unsigned int),
+			"0123456789ABCDEF", c);
+	else if (c == 'p')
+		ft_putnbr_base((unsigned long long)va_arg(args, unsigned long long),
+			"0123456789abcdef", c);
+	return (1);
 }
 
 int	ft_printf(const char *s, ...)
@@ -40,7 +55,7 @@ int	ft_printf(const char *s, ...)
 			check_flag(str[i + 1], args);
 			i++;
 		}
-        i++;
+		i++;
 	}
 	free(str);
 	va_end(args);
