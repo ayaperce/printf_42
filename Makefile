@@ -2,8 +2,8 @@ NAME=libftprintf.a
 CC=clang
 CFLAGS=-Wall -Wextra -Werror
 RM=rm -f
-LIBFT = ./include/ft_strdup.c
-SRC = ./source/ft_printf.c ./source/ft_put.c
+LIBFT = ./include/ft_itoa.c ./include/ft_strdup.c 
+SRC = ./src/ft_printf.c ./src/ft_put.c
 OBJ = $(SRC:.c=.o)
 OBJLibft = $(LIBFT:.c=.o)
 
