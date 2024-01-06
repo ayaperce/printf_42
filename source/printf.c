@@ -6,7 +6,7 @@
 /*   By: ayaperce <ayaperce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 21:10:45 by ayaperce          #+#    #+#             */
-/*   Updated: 2024/01/03 04:02:22 by ayaperce         ###   ########.fr       */
+/*   Updated: 2024/01/06 18:32:27 by ayaperce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,10 @@ int	ft_printf(const char *s, ...)
 	va_list	args;
 	size_t	i;
 	char	*str;
-	int *rtv;
+	int		rtv;
 
 	str = ft_strdup(s);
+	rtv = 0;
 	va_start(args, s);
 	i = 0;
 	while (str[i])

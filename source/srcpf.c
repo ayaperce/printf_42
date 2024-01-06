@@ -6,11 +6,12 @@
 /*   By: ayaperce <ayaperce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 21:10:30 by ayaperce          #+#    #+#             */
-/*   Updated: 2024/01/03 04:02:25 by ayaperce         ###   ########.fr       */
+/*   Updated: 2024/01/06 18:34:01 by ayaperce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
+#include "../include/libft.h"
 #include <stdio.h>
 #include <unistd.h>
 
@@ -49,7 +50,6 @@ void	ft_putnbr(int nb, int *rtv)
 	if (nb < 10)
 		ft_putchar(nb + 48, rtv);
 }
-
 
 void	ft_putnbr_base(unsigned long long nbr, char *base, char c, int *rtv)
 {
