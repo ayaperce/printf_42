@@ -6,11 +6,11 @@
 /*   By: ayaperce <ayaperce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 02:50:45 by ayaperce          #+#    #+#             */
-/*   Updated: 2024/01/02 02:50:46 by ayaperce         ###   ########.fr       */
+/*   Updated: 2024/02/16 08:03:54 by ayaperce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../source/printf.h"
+#include "../source/ft_printf.h"
 
 int		ft_find_str_size(int n);
 char	*ft_uitoa(unsigned int n, char *dest, int size);

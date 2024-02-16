@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.c                                           :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayaperce <ayaperce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 21:10:45 by ayaperce          #+#    #+#             */
-/*   Updated: 2024/02/02 17:32:46 by ayaperce         ###   ########.fr       */
+/*   Updated: 2024/02/16 08:13:58 by ayaperce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
-#include "printf.h"
+#include "ft_printf.h"
 
 int	check_flag(char c, va_list args, int *rtv)
 {
@@ -61,5 +61,5 @@ int	ft_printf(const char *s, ...)
 	}
 	free(str);
 	va_end(args);
-	return (i);
+	return (rtv);
 }
